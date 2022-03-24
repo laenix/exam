@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="https://www.cctrcloud.net/favicon.ico">
+    <link rel="stylesheet" href="./css/register.css">
+    <title>融智云考解密版</title>
+    <script src="./lib/jQuery.min.js"></script>
+    <script src="./lib/jsencrypt.js"></script>
+    <script src="./lib/encrypt.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+
+<body>
+    <div class="register">
+        <div class="register_input">
+            <span class="input_prompt">学校编码：</span>
+            <input type="text" id="school" placeholder="学校编码" value="U101441">
+            <span class="input_alert"></span>
+        </div>
+        <div class="register_input">
+            <span class="input_prompt">学号：</span>
+            <input type="text" id="sno" placeholder="输入学号">
+            <span class="input_alert"></span>
+        </div>
+        <div class="register_input">
+            <span class="input_prompt">密码：</span>
+            <input type="password" id="password" placeholder="输入新密码">
+            <span class="input_alert"></span>
+        </div>
+        <div>
+            <input type="button" value="登录" class="button" id="btn" style="background-color: #5b71f1;"
+                data-toggle="modal" data-target="#myModal">
+        </div>
+    </div>
+    <!-- 修改密码部分结束 -->
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- 模态框主体 -->
+                <div class="modal-body" id="update_password_tips">
+                    <p id="msg">loading...</p>
+                </div>
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

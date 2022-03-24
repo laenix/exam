@@ -7,21 +7,25 @@ const FormData = require('form-data')
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/', function (req, res) {
-  let url = req.url
-  let mydata = new FormData();
-  mydata.append('number', req.body.number);
+  var url = req.url
+  var method = req.method
+  var obj = req.body
+  console.log(obj);
+  var mydata = new FormData();
+  Object.keys(obj).forEach(function (index) {
+    mydata.append(index, obj[index])
+  });
   axios({
     url: `https://api.cctrcloud.net${url}`,
-    method: "post",
+    method: method,
     data: mydata,
     headers: mydata.getHeaders()
   })
     .then(response => {
-      if (response.data.code === 200) {
-        res.send(response.data.datas.ID)
-      }
+      res.send(response.data)
     })
     .catch(error => {
       console.error(error)

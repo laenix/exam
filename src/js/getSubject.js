@@ -1,5 +1,5 @@
 
-const list = require('./list.json')
+const list = require('../list.json')
 const pako = require('pako')
 const fs = require('fs')
 
