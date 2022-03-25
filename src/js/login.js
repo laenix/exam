@@ -15,12 +15,13 @@ $(function () {
       type: 'POST',
       data: {
         username: $('#sno').val(),
-        password: encrypt($.trim($('#psw').val())),
+        password: encrypt($.trim($('#password').val())),
         schoolid: await getschoolId(),
         client: 'web'
       }
     }).then(response => {
       localStorage.setItem('key', response.datas.key)
+      location.href = './practice.html'
     })
   }
   $('#btn').click(function () {

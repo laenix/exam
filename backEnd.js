@@ -13,7 +13,6 @@ app.use('/', function (req, res) {
   var url = req.url
   var method = req.method
   var obj = req.body
-  console.log(obj);
   var mydata = new FormData();
   Object.keys(obj).forEach(function (index) {
     mydata.append(index, obj[index])
