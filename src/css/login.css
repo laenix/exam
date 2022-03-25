@@ -63,6 +63,7 @@ input {
     color: #fff;
     font-weight: 700;
     font-size: 18px;
+    background-color: #5b71f1;
 }
 
 input:focus {

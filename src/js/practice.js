@@ -1,36 +1,21 @@
 $(function () {
 	function getAcquisitionCountdown(endDateStr) {
-		// 结束时间
 		var endDate = new Date(endDateStr.split('.')[0].replace(/\-/g, '/'))
-
-		// 当前服务器时间
 		var nowDate = new Date();
-		// nowDate = new Date(now.replace(/-/g,"/"));
-		// 相差的总秒数
 		var totalSeconds = parseInt((endDate - nowDate) / 1000);
-		// console.log(endDate,nowDate,totalSeconds)
-		// 天数（转换成字符串类型，以防网不好的情况下，出现now）
 		var day = totalSeconds / (60 * 60 * 24);
 		var days = null;
 		days = day.toString().split(".")[0];
-		// 取模（余数）
 		var modulo = totalSeconds % (60 * 60 * 24);
-		// 小时数
 		var hours = Math.floor(modulo / (60 * 60));
 		modulo = modulo % (60 * 60);
-		// 分钟
 		var minutes = Math.floor(modulo / 60);
-		// 秒
 		var seconds = modulo % 60;
-		// 输出到页面
 		if (days != "0" && days > 0) {
-			// return "剩余"+ days + "天" + hours + "时" + minutes + "分" + seconds + "秒";
 			return days + "天" + "后结束";
 		} else if (days == 0 && hours != 0 && hours > 0) {
-			// return  "剩余"+ hours + "时"+ minutes + "分" + seconds + "秒";
 			return hours + "时" + "后结束";
 		} else if (hours == 0 && minutes != 0 && minutes > 0) {
-			// return "剩余"+ minutes + "分" + seconds + "秒";
 			return minutes + "分" + "后结束";
 		} else if (minutes == 0 && seconds != 0 && seconds > 0) {
 			return seconds + "秒" + "后结束";

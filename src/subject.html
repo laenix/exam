@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="https://www.cctrcloud.net/favicon.ico">
+    <title>融智云考解密版</title>
     <script src="./lib/jQuery.min.js"></script>
     <script src="./lib/pako.min.js"></script>
     <script src="./js/build.js"></script>
     <script>
       $(document).ready(function () {
-        // $("#subject").load(), function () {
-        //   $(".question").children("div").addClass("other");
-        //   $(".question .other:nth-child(1)").removeClass("other");
-        //   $(".other").removeAttr("style");
-        // });
         $("#subject").html(build(JSON.parse(localStorage.getItem("list"))));
         $(".question").children("div").addClass("other");
         $(".question .other:nth-child(1)").removeClass("other");
@@ -29,7 +25,6 @@
         margin-bottom: 10px;
       }
       .num {
-        /* top: 10px; */
         font-size: 19px;
         border: 1px dashed aquamarine;
         border-bottom: 0;
